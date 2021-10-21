@@ -1,0 +1,40 @@
+<form (ngSubmit)="onSubmit()" [formGroup]="productoForm">
+    <app-input 
+        label ="Nombre" 
+        [control]="productoForm.get('nombre')">
+    </app-input>
+
+    <app-input
+        label = "Marca"
+        [control]="productoForm.get('marca')">
+    </app-input>
+
+    <app-input
+        label = "Categoria"
+        [control]="productoForm.get('categoria')">
+    </app-input>
+
+    <app-input
+        label = "Costo"
+        [control]="productoForm.get('costo')">
+    </app-input>
+
+    <app-input
+        label = "Imagen"
+        [control]="productoForm.get('imagen')">
+    </app-input>
+
+    <app-input
+        label = "Descripcion"
+        [control]="productoForm.get('descripcion')">
+    </app-input>
+
+    <!-- <app-input
+        label="Identificador"
+        [control]="productoForm.get('identificador')">
+    </app-input> -->
+
+    <div>
+        <button class="button is-primary is-outlined" type="submit">Guardar</button>
+    </div>
+</form>

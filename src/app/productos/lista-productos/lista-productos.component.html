@@ -1,0 +1,32 @@
+
+  <!-- <div class="search input-group mb-3">
+    <input type="text" class="form-control" [(ngModel)] ="nombre" placeholder="Buscar producto por nombre" aria-label="Recipient's username" aria-describedby="button-addon2">
+    <button class="btn btn-outline-secondary" (click)="buscaProducto()" type="button" id="button-addon2">Buscar</button>
+  </div> -->
+  
+  <div *ngIf="productos.length > 0; else addItems" class="row row-cols-1 row-cols-md-3 g-4">
+    <div *ngFor="let producto of productos; let indx = index" (click)="detalle(producto, indx)" class="col">
+      <div class="card">
+        <img [src]="producto.imagen" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title"><b>{{ producto.nombre }}</b></h5>
+          <h6 class="card-title">{{ producto.marca }}</h6>
+          <p class="card-text">{{ producto.descripcion }}</p>
+          <p class="card-text"><b>${{ producto.costo | number }}</b></p>
+          <a class="nav-link" routerLink="/detalleProducto">Ver Detalle</a>
+        </div>
+      </div>
+    </div>
+  </div>  
+
+  <!-- <pre>{{ activeProduct | json }}</pre> -->
+
+  <ng-template #addItems>
+    <div class="card">
+      <div class="card-body">
+        <h1>Ingresa a la seccion de Agregar producto, e ingresa Items</h1>
+        <img class="image" src="https://cdn-icons.flaticon.com/png/512/3270/premium/3270999.png?token=exp=1634772044~hmac=347d7387304cfa757ca6430a205fa922" alt="Working">
+      </div>
+    </div>
+  </ng-template>
+
